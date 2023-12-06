@@ -1,0 +1,26 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "alwaysStrict": true,
+        "baseUrl": "./",
+        "declaration": true,
+        "forceConsistentCasingInFileNames": true,
+        "module": "ESNext",
+        "moduleResolution": "node",
+        "outDir": "dist",
+        "paths": {
+            "@/*": ["src/*"]
+        },
+        "plugins": [
+            // Transform paths in output .js files
+            { "transform": "typescript-transform-paths", "exclude": ["**/node_modules/**"] },
+
+            // Transform paths in output .d.ts files (Include this line if you output declarations files)
+            { "transform": "typescript-transform-paths", "afterDeclarations": true, "exclude": ["**/node_modules/**"] }
+        ],
+        "skipLibCheck": true,
+        "target": "ESNext"
+    },
+    "include": ["src/**/*.ts"],
+    "exclude": []
+}

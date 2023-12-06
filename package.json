@@ -1,0 +1,22 @@
+{
+    "name": "rollup_relative_path_repro",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "devDependencies": {
+        "@rollup/plugin-typescript": "^11.1.5",
+        "rimraf": "^5.0.5",
+        "rollup": "^4.6.0",
+        "rollup-plugin-typescript2": "^0.36.0",
+        "ts-patch": "^3.0.2",
+        "tslib": "^2.6.2",
+        "typescript": "^5.3.2",
+        "typescript-transform-paths": "^3.4.6"
+    },
+    "scripts": {
+        "prepare": "ts-patch install -s",
+        "clean": "rimraf dist",
+        "prebuild": "yarn clean",
+        "build": "rollup --config rollup.config.mjs"
+    }
+}
